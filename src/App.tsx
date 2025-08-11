@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WalletProvider } from "@/components/WalletProvider";
 import Index from "./pages/Index";
-import Raffles from "./pages/Raffles";
+import Roulette from "./pages/Roulette";
 import Dashboard from "./pages/Dashboard";
 import Rewards from "./pages/Rewards";
 import NotFound from "./pages/NotFound";
@@ -17,7 +17,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/raffles" element={<Raffles />} />
+          <Route path="/roulette" element={<Roulette />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/rewards" element={<Rewards />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

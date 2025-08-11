@@ -122,7 +122,9 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
 				'gradient': 'gradient 8s ease infinite',
-				'spin-slow': 'spin 3s linear infinite'
+				'spin-slow': 'spin 3s linear infinite',
+				'spin-roulette': 'spin 3s cubic-bezier(0.17, 0.67, 0.12, 0.99)',
+				'pulse-win': 'pulse-glow 0.5s ease-in-out 3'
 			}
 		}
 	},

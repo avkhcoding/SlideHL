@@ -1,35 +1,37 @@
 import { Header } from '@/components/Header'
 import { HeroSection } from '@/components/HeroSection'
-import { RaffleCard } from '@/components/RaffleCard'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import { motion } from 'framer-motion'
-import { ArrowRight, Shield, Zap, Users, Trophy, ChevronRight } from 'lucide-react'
+import { ArrowRight, Shield, Zap, Users, Trophy, ChevronRight, RotateCcw, Coins, Gift, Sparkles } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-// Featured raffles for homepage
-const featuredRaffles = [
+// Recent winners data for homepage
+const recentWinners = [
   {
     id: '1',
-    title: 'Daily ETH Yield Raffle',
-    prizeAmount: '2.5',
-    prizeToken: 'ETH',
-    ticketPrice: '0.01',
-    totalTickets: 1000,
-    soldTickets: 750,
-    endTime: new Date(Date.now() + 4 * 60 * 60 * 1000),
-    category: 'daily' as const
+    player: '0x1234...5678',
+    prize: 'Cash 40%',
+    amount: '$40',
+    time: '2 min ago',
+    color: 'hsl(var(--warning))'
   },
   {
     id: '2', 
-    title: 'Weekly USDC Mega Pool',
-    prizeAmount: '5,000',
-    prizeToken: 'USDC',
-    ticketPrice: '0.05',
-    totalTickets: 2000,
-    soldTickets: 1200,
-    endTime: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000),
-    category: 'weekly' as const
+    player: '0x9abc...def0',
+    prize: 'Points 2x',
+    amount: '2x Multiplier',
+    time: '5 min ago',
+    color: 'hsl(var(--accent))'
+  },
+  {
+    id: '3',
+    player: '0x2468...ace0', 
+    prize: 'Mystery Prize',
+    amount: 'NFT Whitelist',
+    time: '8 min ago',
+    color: 'hsl(242 99% 71%)'
   }
 ]
 
@@ -37,22 +39,22 @@ const features = [
   {
     icon: Shield,
     title: 'Verifiable & Fair',
-    description: 'Chainlink VRF ensures provably fair draws with on-chain verification'
+    description: 'Chainlink VRF ensures provably fair spins with on-chain verification'
   },
   {
     icon: Zap,
-    title: 'Powered by DeFi',
-    description: 'Prizes generated from high-yield strategies on Hyperliquid'
+    title: 'Yield-Backed Prizes',
+    description: 'Daily prize pools funded by DeFi strategies on Hyperliquid'
   },
   {
-    icon: Users,
-    title: 'Community Driven',
-    description: 'Every ticket sale compounds the pool, benefiting all participants'
+    icon: RotateCcw,
+    title: 'Instant Spins',
+    description: 'Spin the wheel anytime with just 0.025 $HYPE - no waiting for draws'
   },
   {
-    icon: Trophy,
-    title: 'Instant Rewards',
-    description: 'Choose instant payouts or get airdrop farming allocations'
+    icon: Gift,
+    title: 'Multiple Prize Types',
+    description: 'Win cash payouts, point multipliers, free spins, or mystery prizes'
   }
 ]
 
@@ -64,7 +66,7 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Featured Raffles */}
+      {/* Recent Winners */}
       <section className="py-20 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -75,31 +77,49 @@ const Index = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Featured Raffles
+              Recent Winners
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Join active raffles with the highest yields and biggest prize pools
+              Join players winning prizes every few minutes on the roulette
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {featuredRaffles.map((raffle, index) => (
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {recentWinners.map((winner, index) => (
               <motion.div
-                key={raffle.id}
+                key={winner.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <RaffleCard {...raffle} />
+                <Card className="card-hover border-border bg-gradient-to-br from-card to-card/50">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Trophy className="w-6 h-6" style={{ color: winner.color }} />
+                    </div>
+                    <p className="font-semibold text-lg mb-2" style={{ color: winner.color }}>
+                      {winner.prize}
+                    </p>
+                    <p className="text-sm text-muted-foreground mb-1">
+                      {winner.player}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {winner.time}
+                    </p>
+                    <Badge variant="outline" className="mt-3">
+                      {winner.amount}
+                    </Badge>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>
 
           <div className="text-center">
             <Button asChild variant="hero" className="px-8 py-4">
-              <Link to="/raffles">
-                View All Raffles
+              <Link to="/roulette">
+                Try Your Luck
                 <ChevronRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>
@@ -173,8 +193,8 @@ const Index = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild variant="hero" className="px-8 py-4 text-lg">
-                <Link to="/raffles">
-                  Enter First Raffle
+                <Link to="/roulette">
+                  Spin the Wheel
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
@@ -195,21 +215,21 @@ const Index = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gradient-to-br from-primary to-success rounded-lg flex items-center justify-center">
-                  <Trophy className="w-5 h-5 text-primary-foreground" />
+                  <RotateCcw className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <span className="text-xl font-bold bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">
                   Slide
                 </span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Gamified yield raffles on Hyperliquid EVM. Built for the future of DeFi.
+                Yield-backed roulette on Hyperliquid EVM. Built for the future of DeFi.
               </p>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Platform</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <Link to="/raffles" className="block hover:text-foreground transition-colors">Raffles</Link>
+                <Link to="/roulette" className="block hover:text-foreground transition-colors">Roulette</Link>
                 <Link to="/dashboard" className="block hover:text-foreground transition-colors">Dashboard</Link>
                 <Link to="/rewards" className="block hover:text-foreground transition-colors">Rewards</Link>
               </div>

@@ -3,11 +3,11 @@ import { Link, useLocation } from 'react-router-dom'
 import { ConnectWallet } from './ConnectWallet'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { Menu, Ticket, Trophy, BarChart3, Gift } from 'lucide-react'
+import { Menu, RotateCcw, Trophy, BarChart3, Gift } from 'lucide-react'
 
 const navigation = [
-  { name: 'Home', href: '/', icon: Ticket },
-  { name: 'Raffles', href: '/raffles', icon: Trophy },
+  { name: 'Home', href: '/', icon: RotateCcw },
+  { name: 'Roulette', href: '/roulette', icon: Trophy },
   { name: 'Dashboard', href: '/dashboard', icon: BarChart3 },
   { name: 'Rewards', href: '/rewards', icon: Gift },
 ]
@@ -25,7 +25,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-success rounded-lg flex items-center justify-center">
-              <Ticket className="w-5 h-5 text-primary-foreground" />
+              <RotateCcw className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">
               Slide
@@ -70,7 +70,7 @@ export function Header() {
                 <div className="flex flex-col space-y-6 py-6">
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-gradient-to-br from-primary to-success rounded-lg flex items-center justify-center">
-                      <Ticket className="w-5 h-5 text-primary-foreground" />
+                      <RotateCcw className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <span className="text-xl font-bold bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">
                       Slide
