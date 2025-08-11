@@ -21,12 +21,17 @@ export const hyperliquid = defineChain({
   },
 })
 
+const WALLETCONNECT_PROJECT_ID =
+  (typeof import.meta !== 'undefined' && (import.meta as any).env?.VITE_WALLETCONNECT_PROJECT_ID) ||
+  (typeof window !== 'undefined' ? window.localStorage?.getItem('WALLETCONNECT_PROJECT_ID') : null) ||
+  'demo'
+
 export const wagmiConfig = createConfig({
   chains: [hyperliquid],
   connectors: [
     injected(),
     walletConnect({
-      projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || 'demo',
+      projectId: WALLETCONNECT_PROJECT_ID,
     }),
   ],
   transports: {
