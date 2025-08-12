@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ConnectWallet } from './ConnectWallet'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { Menu, RotateCcw, Trophy, BarChart3, Gift } from 'lucide-react'
+import { Menu, RotateCcw, Trophy, BarChart3, Gift, Coins, Star } from 'lucide-react'
 
 const navigation = [
   { name: 'Home', href: '/', icon: RotateCcw },
@@ -12,7 +13,12 @@ const navigation = [
   { name: 'Rewards', href: '/rewards', icon: Gift },
 ]
 
-export function Header() {
+interface HeaderProps {
+  userPoints?: number
+  userBalance?: number
+}
+
+export function Header({ userPoints, userBalance }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
 
@@ -53,8 +59,24 @@ export function Header() {
             })}
           </nav>
 
-          {/* Desktop Wallet */}
-          <div className="hidden md:flex">
+          {/* Desktop User Stats & Wallet */}
+          <div className="hidden md:flex items-center space-x-4">
+            {userPoints !== undefined && (
+              <div className="flex items-center space-x-2">
+                <Badge variant="outline" className="bg-success/10 text-success border-success/20">
+                  <Star className="w-3 h-3 mr-1" />
+                  {userPoints.toLocaleString()}
+                </Badge>
+              </div>
+            )}
+            {userBalance !== undefined && (
+              <div className="flex items-center space-x-2">
+                <Badge variant="outline" className="bg-warning/10 text-warning border-warning/20">
+                  <Coins className="w-3 h-3 mr-1" />
+                  {userBalance.toFixed(3)} $HYPE
+                </Badge>
+              </div>
+            )}
             <ConnectWallet />
           </div>
 
@@ -98,7 +120,30 @@ export function Header() {
                     })}
                   </nav>
 
-                  <div className="pt-4 border-t border-border">
+                  <div className="pt-4 border-t border-border space-y-4">
+                    {/* Mobile User Stats */}
+                    {(userPoints !== undefined || userBalance !== undefined) && (
+                      <div className="space-y-3">
+                        {userPoints !== undefined && (
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-muted-foreground">Points</span>
+                            <Badge variant="outline" className="bg-success/10 text-success border-success/20">
+                              <Star className="w-3 h-3 mr-1" />
+                              {userPoints.toLocaleString()}
+                            </Badge>
+                          </div>
+                        )}
+                        {userBalance !== undefined && (
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-muted-foreground">Balance</span>
+                            <Badge variant="outline" className="bg-warning/10 text-warning border-warning/20">
+                              <Coins className="w-3 h-3 mr-1" />
+                              {userBalance.toFixed(3)} $HYPE
+                            </Badge>
+                          </div>
+                        )}
+                      </div>
+                    )}
                     <ConnectWallet />
                   </div>
                 </div>

@@ -5,6 +5,8 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { TrendingUp, RotateCcw, Sparkles, Gift, Repeat, Clock } from 'lucide-react'
 import { useToast } from '@/hooks/use-toast'
+import { useConfetti } from '@/hooks/useConfetti'
+import { useSound } from '@/hooks/useSound'
 
 export interface YieldRouletteSegment {
   id: string
@@ -48,6 +50,8 @@ export function YieldRouletteWheel({
   const [cooldownTime, setCooldownTime] = useState(0)
   const controls = useAnimation()
   const { toast } = useToast()
+  const { fireConfetti, fireNeonConfetti } = useConfetti()
+  const { playSpinSound, playWinSound } = useSound()
   
   const canSpin = !disabled && !isSpinning && !cooldownActive && userSpinsToday < maxSpinsPerDay
   const dailyYield = weeklyYield / 7
@@ -85,6 +89,7 @@ export function YieldRouletteWheel({
     if (!canSpin) return
 
     setIsSpinning(true)
+    playSpinSound()
     const result = getRandomSegment()
     
     const segmentIndex = segments.findIndex(s => s.id === result.id)
@@ -106,6 +111,14 @@ export function YieldRouletteWheel({
       onSpin(result)
       
       if (result.type !== 'none') {
+        // Trigger effects based on prize type
+        if (result.type === 'mystery') {
+          fireNeonConfetti()
+        } else {
+          fireConfetti()
+        }
+        playWinSound()
+        
         toast({
           title: "🎉 Winner!",
           description: `You won: ${result.label}`,

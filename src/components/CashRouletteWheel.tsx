@@ -5,6 +5,8 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Coins, RotateCcw, Sparkles, Gift, Repeat, Zap } from 'lucide-react'
 import { useToast } from '@/hooks/use-toast'
+import { useConfetti } from '@/hooks/useConfetti'
+import { useSound } from '@/hooks/useSound'
 
 export interface CashRouletteSegment {
   id: string
@@ -51,6 +53,8 @@ export function CashRouletteWheel({
   const [cooldownTime, setCooldownTime] = useState(0)
   const controls = useAnimation()
   const { toast } = useToast()
+  const { fireConfetti, fireBigWinConfetti, fireNeonConfetti } = useConfetti()
+  const { playSpinSound, playWinSound, playBigWinSound } = useSound()
   
   const canSpin = !disabled && !isSpinning && !cooldownActive && userSpinsToday < maxSpinsPerDay
 
@@ -87,6 +91,7 @@ export function CashRouletteWheel({
     if (!canSpin) return
 
     setIsSpinning(true)
+    playSpinSound()
     const result = getRandomSegment()
     
     const segmentIndex = segments.findIndex(s => s.id === result.id)
@@ -108,6 +113,19 @@ export function CashRouletteWheel({
       onSpin(result)
       
       if (result.type !== 'none') {
+        // Trigger appropriate effects based on prize value
+        if (result.type === 'instant_payout' && typeof result.amount === 'string' && 
+            (result.amount.includes('40%') || result.amount.includes('60%'))) {
+          fireBigWinConfetti()
+          playBigWinSound()
+        } else if (result.type === 'mystery') {
+          fireNeonConfetti()
+          playWinSound()
+        } else {
+          fireConfetti()
+          playWinSound()
+        }
+        
         toast({
           title: "🎉 Winner!",
           description: `You won: ${result.label}`,
