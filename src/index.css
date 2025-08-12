@@ -6,73 +6,74 @@
 
 @layer base {
   :root {
-    /* Hyperliquid Teal Palette - Core tokens */
-    --background: 198 55% 10%; /* #0B1E26 - Deep background */
-    --foreground: 0 0% 98%;
+    /* Slide Brand Palette - Mobile-first Web3 Design */
+    --background: 170 66% 8%; /* #072723 - Dark Teal */
+    --foreground: 163 20% 85%; /* #D7EAE8 - Light Cyan/Gray */
 
-    --card: 198 45% 12%;
-    --card-foreground: 0 0% 98%;
+    --card: 163 15% 85%; /* #D7EAE8 - Light Cyan/Gray cards */
+    --card-foreground: 170 66% 8%; /* Dark text on light cards */
 
-    --popover: 198 45% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 163 15% 85%;
+    --popover-foreground: 170 66% 8%;
 
     /* Brand & accents */
-    --primary: 187 71% 59%;           /* #4DD0E1 - Electric Blue */
-    --primary-foreground: 0 0% 6%;
-    --primary-glow: 166 94% 79%;      /* #98FCE4 - Light Teal */
+    --primary: 166 94% 79%; /* #98FCE4 - Light Teal highlights */
+    --primary-foreground: 170 66% 8%;
+    --primary-glow: 166 94% 79%;
 
-    --secondary: 198 40% 18%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 163 15% 85%; /* Light Cyan/Gray */
+    --secondary-foreground: 170 66% 8%;
 
-    --muted: 198 30% 15%;
-    --muted-foreground: 198 15% 65%;
+    --muted: 170 40% 15%;
+    --muted-foreground: 163 15% 65%;
 
-    --accent: 242 99% 71%;            /* #736EFE - Indigo */
-    --accent-foreground: 0 0% 98%;
+    --accent: 166 94% 79%; /* Light Teal accents */
+    --accent-foreground: 170 66% 8%;
 
-    /* States */
-    --success: 168 100% 36%;          /* #00B894 - Emerald */
-    --success-foreground: 0 0% 98%;
-    --success-glow: 168 100% 55%;
+    /* States & CTAs */
+    --success: 166 94% 79%; /* Light Teal for success */
+    --success-foreground: 170 66% 8%;
+    --success-glow: 166 94% 79%;
 
-    --warning: 39 100% 69%;           /* #FFC75F - Amber */
-    --warning-foreground: 198 55% 10%;
+    --warning: 84 100% 62%; /* #C8FF00 - Neon Lime */
+    --warning-foreground: 170 66% 8%;
 
-    --destructive: 0 100% 71%;        /* #FF6B6B - Coral */
+    --destructive: 0 84% 69%; /* #FF6B6B - Soft Coral */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 198 30% 18%;
-    --input: 198 30% 18%;
-    --ring: 187 71% 59%;              /* match primary */
+    --border: 170 40% 18%;
+    --input: 163 15% 85%;
+    --ring: 166 94% 79%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg,
-      hsl(166 94% 79%) 0%, /* light teal */
-      hsl(187 71% 59%) 50%, /* electric blue */
-      hsl(242 99% 71%) 100% /* indigo */
+      hsl(166 94% 79%) 0%, /* Light Teal */
+      hsl(170 66% 8%) 100% /* Dark Teal */
     );
     --gradient-success: linear-gradient(135deg,
-      hsl(168 100% 36%) 0%,  /* emerald */
-      hsl(166 94% 79%) 100%  /* light teal */
+      hsl(166 94% 79%) 0%,
+      hsl(84 100% 62%) 100% /* Neon Lime */
     );
     --gradient-hero: linear-gradient(135deg,
       hsl(166 94% 79%) 0%,
-      hsl(187 71% 59%) 60%,
-      hsl(242 99% 71%) 100%
+      hsl(84 100% 62%) 50%,
+      hsl(0 84% 69%) 100%
     );
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(198 45% 9%) 100%);
-    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary-glow) / 0.3) 0%, transparent 70%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(163 15% 80%) 100%);
+    --gradient-dark: linear-gradient(145deg, hsl(170 66% 8%) 0%, hsl(170 50% 12%) 100%);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spin: all 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
 
     /* Shadows */
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
-    --shadow-card: 0 10px 30px -10px hsl(240 10% 3.9% / 0.5);
+    --shadow-card: 0 10px 30px -10px hsl(170 66% 8% / 0.3);
     --shadow-success: 0 0 30px hsl(var(--success-glow) / 0.3);
+    --shadow-neon: 0 0 20px hsl(84 100% 62% / 0.5);
 
     --sidebar-background: 0 0% 98%;
 
