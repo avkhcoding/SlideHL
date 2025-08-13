@@ -75,8 +75,8 @@ export function StreakTracker({ currentStreak, longestStreak, bonusSpins }: Stre
                 key={milestone}
                 className={`p-2 rounded-lg border ${
                   currentStreak >= milestone
-                    ? 'bg-primary/10 border-primary/20 text-primary'
-                    : 'bg-muted/50 border-muted/20 text-muted-foreground'
+                    ? 'bg-primary/10 border-primary/30 text-card-foreground'
+                    : 'bg-muted/30 border-muted/40 text-card-foreground'
                 }`}
               >
                 <div className="font-semibold">{milestone} days</div>
