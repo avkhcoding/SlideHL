@@ -218,7 +218,7 @@ export function CashRouletteWheel({
                         y={radius + (radius - 35) * Math.sin((startAngle + endAngle) / 2)}
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        fill="white"
+                        fill={segment.color === 'hsl(var(--muted))' ? 'hsl(var(--muted-foreground))' : 'white'}
                         fontSize="9"
                         fontWeight="bold"
                         className="pointer-events-none select-none"
