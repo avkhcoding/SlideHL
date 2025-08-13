@@ -10,11 +10,11 @@
     --background: 170 66% 8%; /* #072723 - Dark Teal */
     --foreground: 163 20% 95%; /* Much lighter for better contrast */
 
-    --card: 163 15% 92%; /* Slightly darker card background */
-    --card-foreground: 170 66% 15%; /* Much darker text on cards */
+    --card: 170 40% 12%; /* Dark card background for better contrast */
+    --card-foreground: 163 20% 95%; /* Light text on dark cards */
 
-    --popover: 163 15% 92%;
-    --popover-foreground: 170 66% 15%;
+    --popover: 170 40% 12%;
+    --popover-foreground: 163 20% 95%;
 
     /* Brand & accents */
     --primary: 166 94% 79%; /* #98FCE4 - Light Teal highlights */
