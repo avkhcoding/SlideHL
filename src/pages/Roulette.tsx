@@ -236,12 +236,12 @@ export default function Roulette() {
                       }`}
                     >
                       <div className="flex items-center space-x-3">
-                        <Icon className={`w-4 h-4 ${mechanism.active ? 'text-success' : 'text-muted-foreground'}`} />
+                        <Icon className={`w-4 h-4 ${mechanism.active ? 'text-success' : 'text-card-foreground/60'}`} />
                         <div>
-                          <p className={`text-sm font-medium ${mechanism.active ? 'text-success' : 'text-muted-foreground'}`}>
+                          <p className={`text-sm font-medium ${mechanism.active ? 'text-card-foreground' : 'text-card-foreground/80'}`}>
                             {mechanism.name}
                           </p>
-                          <p className="text-xs text-muted-foreground">{mechanism.description}</p>
+                          <p className={`text-xs ${mechanism.active ? 'text-card-foreground/80' : 'text-card-foreground/60'}`}>{mechanism.description}</p>
                         </div>
                       </div>
                       <Badge variant={mechanism.active ? "default" : "outline"} className="text-xs">

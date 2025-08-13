@@ -54,12 +54,12 @@ export function StreakTracker({ currentStreak, longestStreak, bonusSpins }: Stre
           >
             {currentStreak} days
           </motion.div>
-          <p className="text-sm text-muted-foreground">Current streak</p>
+          <p className="text-sm text-card-foreground/80">Current streak</p>
         </div>
 
         {/* Progress to next milestone */}
         <div className="space-y-2">
-          <div className="flex justify-between text-sm text-muted-foreground">
+          <div className="flex justify-between text-sm text-card-foreground">
             <span>Next milestone: {nextMilestone} days</span>
             <span>{Math.max(0, nextMilestone - currentStreak)} to go</span>
           </div>
@@ -89,11 +89,11 @@ export function StreakTracker({ currentStreak, longestStreak, bonusSpins }: Stre
         {/* Stats */}
         <div className="pt-2 border-t border-border space-y-2">
           <div className="flex justify-between items-center text-sm">
-            <span className="text-muted-foreground">Longest streak</span>
+            <span className="text-card-foreground/80">Longest streak</span>
             <span className="font-semibold text-card-foreground">{longestStreak} days</span>
           </div>
           <div className="flex justify-between items-center text-sm">
-            <span className="text-muted-foreground">Bonus spins available</span>
+            <span className="text-card-foreground/80">Bonus spins available</span>
             <Badge variant="outline" className="bg-success text-success-foreground">
               {bonusSpins}
             </Badge>
