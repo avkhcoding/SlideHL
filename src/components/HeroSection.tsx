@@ -52,7 +52,7 @@ export function HeroSection() {
                 with DeFi Yield
               </h1>
               
-              <p className="text-xl text-muted-foreground max-w-2xl">
+              <p className="text-xl text-card-foreground/80 max-w-2xl">
                 Enter yield-backed raffles powered by advanced DeFi strategies. Every ticket compounds the prize pool, creating sustainable rewards for all participants.
               </p>
             </div>
@@ -83,7 +83,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="flex items-center space-x-6 text-sm text-muted-foreground"
+              className="flex items-center space-x-6 text-sm text-card-foreground/80"
             >
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-success rounded-full mr-2 animate-pulse-glow"></div>
@@ -152,16 +152,16 @@ export function HeroSection() {
               
               <div className="space-y-3 text-sm">
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">🎫 0x7d2f...3a1c bought 5 tickets</span>
-                  <span className="text-xs text-muted-foreground">2m ago</span>
+                  <span className="text-card-foreground/80">🎫 0x7d2f...3a1c bought 5 tickets</span>
+                  <span className="text-xs text-card-foreground/70">2m ago</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">🏆 0x9b4e...7f2d won 1.2 ETH</span>
-                  <span className="text-xs text-muted-foreground">5m ago</span>
+                  <span className="text-card-foreground/80">🏆 0x9b4e...7f2d won 1.2 ETH</span>
+                  <span className="text-xs text-card-foreground/70">5m ago</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-muted-foreground">💰 Pool grew by $15k</span>
-                  <span className="text-xs text-muted-foreground">8m ago</span>
+                  <span className="text-card-foreground/80">💰 Pool grew by $15k</span>
+                  <span className="text-xs text-card-foreground/70">8m ago</span>
                 </div>
               </div>
             </motion.div>

@@ -49,7 +49,7 @@ export function Header({ userPoints, userBalance }: HeaderProps) {
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isActive(item.href)
                       ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+                      : 'text-card-foreground/80 hover:text-foreground hover:bg-accent'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -110,7 +110,7 @@ export function Header({ userPoints, userBalance }: HeaderProps) {
                           className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                             isActive(item.href)
                               ? 'text-primary bg-primary/10'
-                              : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+                              : 'text-card-foreground/80 hover:text-foreground hover:bg-accent'
                           }`}
                         >
                           <Icon className="w-5 h-5" />
@@ -126,7 +126,7 @@ export function Header({ userPoints, userBalance }: HeaderProps) {
                       <div className="space-y-3">
                         {userPoints !== undefined && (
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-muted-foreground">Points</span>
+                            <span className="text-sm text-card-foreground/80">Points</span>
                             <Badge variant="outline" className="bg-success/10 text-success border-success/20">
                               <Star className="w-3 h-3 mr-1" />
                               {userPoints.toLocaleString()}
@@ -135,7 +135,7 @@ export function Header({ userPoints, userBalance }: HeaderProps) {
                         )}
                         {userBalance !== undefined && (
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-muted-foreground">Balance</span>
+                            <span className="text-sm text-card-foreground/80">Balance</span>
                             <Badge variant="outline" className="bg-warning/10 text-warning border-warning/20">
                               <Coins className="w-3 h-3 mr-1" />
                               {userBalance.toFixed(3)} $HYPE

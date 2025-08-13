@@ -19,10 +19,10 @@ export function StatsCard({ title, value, icon, subtitle, trend, className = '' 
       <CardContent className="p-6">
         <div className="flex items-center justify-between">
           <div className="space-y-1">
-            <p className="text-sm font-medium text-muted-foreground">{title}</p>
+            <p className="text-sm font-medium text-card-foreground/80">{title}</p>
             <p className="text-2xl font-bold text-foreground">{value}</p>
             {subtitle && (
-              <p className="text-xs text-muted-foreground">{subtitle}</p>
+              <p className="text-xs text-card-foreground/70">{subtitle}</p>
             )}
             {trend && (
               <div className={`flex items-center text-xs font-medium ${

@@ -104,7 +104,7 @@ export default function Rewards() {
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">
             Rewards & Challenges
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-card-foreground/80 max-w-2xl mx-auto">
             Complete challenges, earn rewards, and unlock exclusive benefits in the Slide ecosystem
           </p>
         </div>
@@ -164,12 +164,12 @@ export default function Rewards() {
                               {challenge.category}
                             </Badge>
                           </div>
-                          <p className="text-sm text-muted-foreground">
+                          <p className="text-sm text-card-foreground/80">
                             {challenge.description}
                           </p>
                         </div>
                         <div className="text-right">
-                          <p className="text-sm text-muted-foreground mb-1">Reward</p>
+                          <p className="text-sm text-card-foreground/80 mb-1">Reward</p>
                           <p className="font-bold text-success">{challenge.reward}</p>
                         </div>
                       </div>
@@ -177,7 +177,7 @@ export default function Rewards() {
                     <CardContent className="space-y-4">
                       <div className="space-y-2">
                         <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">Progress</span>
+                          <span className="text-card-foreground/80">Progress</span>
                           <span className="font-medium">
                             {challenge.progress} / {challenge.target}
                           </span>
@@ -225,12 +225,12 @@ export default function Rewards() {
                               Sponsored by {event.sponsor}
                             </Badge>
                           </div>
-                          <p className="text-sm text-muted-foreground">
+                          <p className="text-sm text-card-foreground/80">
                             {event.description}
                           </p>
                         </div>
                         <div className="text-right">
-                          <p className="text-sm text-muted-foreground mb-1">Prize</p>
+                          <p className="text-sm text-card-foreground/80 mb-1">Prize</p>
                           <p className="font-bold text-primary">{event.prize}</p>
                         </div>
                       </div>
@@ -238,16 +238,16 @@ export default function Rewards() {
                     <CardContent className="space-y-4">
                       <div className="p-4 bg-muted/30 rounded-lg">
                         <p className="text-sm font-medium mb-1">Entry Requirement</p>
-                        <p className="text-sm text-muted-foreground">{event.entryRequirement}</p>
+                        <p className="text-sm text-card-foreground/80">{event.entryRequirement}</p>
                       </div>
 
                       <div className="grid grid-cols-2 gap-4 text-sm">
                         <div>
-                          <p className="text-muted-foreground">Participants</p>
+                          <p className="text-card-foreground/80">Participants</p>
                           <p className="font-semibold">{event.participants.toLocaleString()} / {event.maxParticipants.toLocaleString()}</p>
                         </div>
                         <div>
-                          <p className="text-muted-foreground">Ends</p>
+                          <p className="text-card-foreground/80">Ends</p>
                           <p className="font-semibold">{new Date(event.endTime).toLocaleDateString()}</p>
                         </div>
                       </div>
@@ -292,24 +292,24 @@ export default function Rewards() {
                           i === 0 ? 'bg-yellow-500 text-white' :
                           i === 1 ? 'bg-gray-400 text-white' :
                           i === 2 ? 'bg-amber-600 text-white' :
-                          'bg-muted text-muted-foreground'
-                        }`}>
-                          {i + 1}
-                        </div>
-                        <div>
-                          <p className="font-medium">
-                            {i === 0 ? 'You' : `0x${Math.random().toString(16).substr(2, 8)}...`}
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            {Math.floor(Math.random() * 50) + 10} challenges completed
-                          </p>
+                           'bg-muted text-card-foreground/80'
+                         }`}>
+                           {i + 1}
+                         </div>
+                         <div>
+                           <p className="font-medium">
+                             {i === 0 ? 'You' : `0x${Math.random().toString(16).substr(2, 8)}...`}
+                           </p>
+                           <p className="text-sm text-card-foreground/80">
+                             {Math.floor(Math.random() * 50) + 10} challenges completed
+                           </p>
                         </div>
                       </div>
                       <div className="text-right">
                         <p className="font-bold text-success">
                           {(Math.random() * 5 + 1).toFixed(2)} ETH
                         </p>
-                        <p className="text-xs text-muted-foreground">earned</p>
+                        <p className="text-xs text-card-foreground/70">earned</p>
                       </div>
                     </div>
                   ))}

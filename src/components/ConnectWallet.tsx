@@ -54,7 +54,7 @@ export function ConnectWallet() {
           <span className="text-sm font-medium">{formatAddress(address)}</span>
           <button
             onClick={copyAddress}
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-card-foreground/80 hover:text-foreground transition-colors"
           >
             {copied ? (
               <Check className="w-4 h-4 text-success" />
@@ -111,12 +111,12 @@ export function ConnectWallet() {
                   </div>
                   <span className="font-medium">{connector.name}</span>
                 </div>
-                <ExternalLink className="w-4 h-4 text-muted-foreground" />
+                <ExternalLink className="w-4 h-4 text-card-foreground/80" />
               </Button>
             ))}
           </div>
           
-          <p className="text-sm text-muted-foreground text-center">
+          <p className="text-sm text-card-foreground/80 text-center">
             By connecting your wallet, you agree to our Terms of Service
           </p>
         </DialogContent>

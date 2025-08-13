@@ -71,9 +71,9 @@ export default function Dashboard() {
         <Header />
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <Wallet className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+            <Wallet className="w-16 h-16 text-card-foreground/60 mx-auto mb-4" />
             <h1 className="text-2xl font-bold mb-2">Connect Your Wallet</h1>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-card-foreground/80 mb-6">
               Connect your wallet to view your dashboard and raffle history.
             </p>
           </div>
@@ -90,7 +90,7 @@ export default function Dashboard() {
         {/* Welcome Section */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Welcome back!</h1>
-          <p className="text-muted-foreground">
+          <p className="text-card-foreground/80">
             Manage your raffle entries and track your winnings
           </p>
         </div>
@@ -146,17 +146,17 @@ export default function Dashboard() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-muted-foreground">Prize Pool</span>
+                        <span className="text-sm text-card-foreground/80">Prize Pool</span>
                         <span className="font-semibold text-success">{ticket.prizePool}</span>
                       </div>
                       
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-muted-foreground">Your Tickets</span>
+                        <span className="text-sm text-card-foreground/80">Your Tickets</span>
                         <span className="font-semibold">{ticket.ticketCount} tickets</span>
                       </div>
 
                       <div className="space-y-2">
-                        <span className="text-sm text-muted-foreground">Ticket Numbers</span>
+                        <span className="text-sm text-card-foreground/80">Ticket Numbers</span>
                         <div className="flex flex-wrap gap-1">
                           {ticket.ticketNumbers.slice(0, 5).map((num, index) => (
                             <Badge key={index} variant="secondary" className="text-xs">
@@ -172,7 +172,7 @@ export default function Dashboard() {
                       </div>
 
                       <div className="flex items-center justify-between pt-2 border-t border-border">
-                        <div className="flex items-center text-sm text-muted-foreground">
+                        <div className="flex items-center text-sm text-card-foreground/80">
                           <Clock className="w-4 h-4 mr-1" />
                           Ends {new Date(ticket.endTime).toLocaleDateString()}
                         </div>
@@ -195,7 +195,7 @@ export default function Dashboard() {
                     <div className="flex items-center justify-between">
                       <div className="space-y-1">
                         <h3 className="font-semibold">{win.raffleName}</h3>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-card-foreground/80">
                           Won on {new Date(win.date).toLocaleDateString()}
                         </p>
                       </div>
@@ -272,7 +272,7 @@ export default function Dashboard() {
                       <div className="w-2 h-2 bg-success rounded-full mt-2"></div>
                       <div className="flex-1">
                         <p className="text-sm font-medium">Won Daily ETH Raffle</p>
-                        <p className="text-xs text-muted-foreground">Jan 10, 2024</p>
+                        <p className="text-xs text-card-foreground/70">Jan 10, 2024</p>
                       </div>
                       <span className="text-sm text-success">+0.75 ETH</span>
                     </div>
@@ -281,16 +281,16 @@ export default function Dashboard() {
                       <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                       <div className="flex-1">
                         <p className="text-sm font-medium">Bought 10 tickets</p>
-                        <p className="text-xs text-muted-foreground">Jan 8, 2024</p>
+                        <p className="text-xs text-card-foreground/70">Jan 8, 2024</p>
                       </div>
-                      <span className="text-sm text-muted-foreground">-0.25 ETH</span>
+                      <span className="text-sm text-card-foreground/80">-0.25 ETH</span>
                     </div>
                     
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-warning rounded-full mt-2"></div>
                       <div className="flex-1">
                         <p className="text-sm font-medium">Won Special Airdrop</p>
-                        <p className="text-xs text-muted-foreground">Jan 8, 2024</p>
+                        <p className="text-xs text-card-foreground/70">Jan 8, 2024</p>
                       </div>
                       <span className="text-sm text-warning">2.5k Points</span>
                     </div>

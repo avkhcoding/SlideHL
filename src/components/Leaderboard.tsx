@@ -24,11 +24,11 @@ export function Leaderboard({ leaders, userRank, userPoints }: LeaderboardProps)
       case 1:
         return <Trophy className="w-5 h-5 text-warning" />
       case 2:
-        return <Medal className="w-5 h-5 text-muted-foreground" />
+        return <Medal className="w-5 h-5 text-card-foreground/60" />
       case 3:
         return <Award className="w-5 h-5 text-destructive" />
       default:
-        return <span className="w-5 h-5 flex items-center justify-center text-sm font-bold text-muted-foreground">#{rank}</span>
+        return <span className="w-5 h-5 flex items-center justify-center text-sm font-bold text-card-foreground/80">#{rank}</span>
     }
   }
 
@@ -62,7 +62,7 @@ export function Leaderboard({ leaders, userRank, userPoints }: LeaderboardProps)
                 </div>
                 <div>
                   <p className="font-semibold text-card-foreground">Your Position</p>
-                  <p className="text-sm text-muted-foreground">#{userRank}</p>
+                  <p className="text-sm text-card-foreground/80">#{userRank}</p>
                 </div>
               </div>
               <Badge variant="outline" className="bg-primary text-primary-foreground">
@@ -99,7 +99,7 @@ export function Leaderboard({ leaders, userRank, userPoints }: LeaderboardProps)
                   <p className="font-medium text-card-foreground text-sm">
                     {leader.address.slice(0, 6)}...{leader.address.slice(-4)}
                   </p>
-                  <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                  <div className="flex items-center space-x-2 text-xs text-card-foreground/80">
                     <span>{leader.points.toLocaleString()} pts</span>
                     {leader.streak > 0 && (
                       <>

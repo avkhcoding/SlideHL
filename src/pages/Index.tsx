@@ -79,7 +79,7 @@ const Index = () => {
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               Recent Winners
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-card-foreground/80 max-w-2xl mx-auto">
               Join players winning prizes every few minutes on the roulette
             </p>
           </motion.div>
@@ -101,10 +101,10 @@ const Index = () => {
                     <p className="font-semibold text-lg mb-2" style={{ color: winner.color }}>
                       {winner.prize}
                     </p>
-                    <p className="text-sm text-muted-foreground mb-1">
+                    <p className="text-sm text-card-foreground/80 mb-1">
                       {winner.player}
                     </p>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-card-foreground/70">
                       {winner.time}
                     </p>
                     <Badge variant="outline" className="mt-3">
@@ -140,7 +140,7 @@ const Index = () => {
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               How <span className="bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">Slide</span> Works
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-card-foreground/80 max-w-3xl mx-auto">
               A revolutionary approach to DeFi that combines yield farming with gamified raffles
             </p>
           </motion.div>
@@ -164,7 +164,7 @@ const Index = () => {
                       <CardTitle className="text-lg">{feature.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground">{feature.description}</p>
+                      <p className="text-card-foreground/80">{feature.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -187,7 +187,7 @@ const Index = () => {
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               Ready to Start Winning?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-card-foreground/80 mb-8 max-w-2xl mx-auto">
               Join thousands of users earning yield through gamified DeFi. Connect your wallet and start participating today.
             </p>
             
@@ -221,14 +221,14 @@ const Index = () => {
                   Slide
                 </span>
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-card-foreground/80">
                 Yield-backed roulette on Hyperliquid EVM. Built for the future of DeFi.
               </p>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Platform</h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-sm text-card-foreground/80">
                 <Link to="/roulette" className="block hover:text-foreground transition-colors">Roulette</Link>
                 <Link to="/dashboard" className="block hover:text-foreground transition-colors">Dashboard</Link>
                 <Link to="/rewards" className="block hover:text-foreground transition-colors">Rewards</Link>
@@ -237,7 +237,7 @@ const Index = () => {
 
             <div>
               <h3 className="font-semibold mb-4">Resources</h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-sm text-card-foreground/80">
                 <a href="#" className="block hover:text-foreground transition-colors">Documentation</a>
                 <a href="#" className="block hover:text-foreground transition-colors">FAQ</a>
                 <a href="#" className="block hover:text-foreground transition-colors">Support</a>
@@ -246,7 +246,7 @@ const Index = () => {
 
             <div>
               <h3 className="font-semibold mb-4">Community</h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="space-y-2 text-sm text-card-foreground/80">
                 <a href="#" className="block hover:text-foreground transition-colors">Discord</a>
                 <a href="#" className="block hover:text-foreground transition-colors">Twitter</a>
                 <a href="#" className="block hover:text-foreground transition-colors">Telegram</a>
@@ -254,7 +254,7 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
+          <div className="border-t border-border mt-8 pt-8 text-center text-sm text-card-foreground/70">
             <p>&copy; 2024 Slide. All rights reserved. Built on Hyperliquid EVM.</p>
           </div>
         </div>
